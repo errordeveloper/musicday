@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/terms.html',
         controller: 'AboutCtrl'
       })
+      .when('/inspiration', {
+        templateUrl: 'views/inspiration.html',
+        controller: 'InspirationCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
