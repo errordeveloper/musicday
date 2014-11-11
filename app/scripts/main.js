@@ -29,7 +29,7 @@ $(document).ready(function(){
     }
  });
    }
-   
+
  });
 
   $(window).resize(function(event) {
@@ -81,7 +81,7 @@ $( "#login" ).submit(function( event ) {
   .always(function() {
     console.log("complete");
   });
-  
+
 });
 
 // GALLERY PAGE
@@ -99,124 +99,13 @@ if(currentPage === 'inspiration' || currentPage === 'resources'){
 
 // HOME PAGE
 if(currentPage === ''){
-
-  logoswap();
-  $(window).resize(logoswap);
-
-  var st = $(window).scrollTop();
-$(window).waypoint(function(direction) {
-  $(window).on('scroll', function() {
-    st = $(this).scrollTop();
-    $('.homeback').css({ 'opacity' : (0.1 + st/900) });
-      $('.star').css({
-      opacity : (0.0 + st/250),
-      // width: (50 + st/20) + "px"
-    });    
-  });
-});
-
-$('.star').waypoint('sticky', {
-  offset: 152
-});
-
-// News ticker
-var aniSpd01 = 4500;
-var fadeSpd01 = 500;
-
-$(function() {
-    var startIndex = -1;
-    var endIndex = $('#aniHolder div').length -1;
-    $('#aniHolder div:first').fadeIn(fadeSpd01);
-
-    window.setInterval(function() {
-    $('#aniHolder div:eq(' + startIndex + ')').delay(fadeSpd01).fadeOut(fadeSpd01);
-        startIndex++;
-        $('#aniHolder div:eq(' + startIndex + ')').delay(fadeSpd01).fadeIn(fadeSpd01);
-
-        if (endIndex == startIndex) startIndex = -1;
-    }, aniSpd01);
-});
-
-
-  $.ajax({
-    url: 'actions.php',
-    type: 'POST',
-    data: {act: 'mapAllEvents'},
-    success: function(data){
-      if(data === undefined || data === null || data.length === 0){
-        var mapOptions = {
-          center: new google.maps.LatLng(54.0622661,-3.4827427),
-          zoom: 6
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-    mapOptions);
-      }else{
-        var locations = $.parseJSON(data);
-        google.maps.event.addDomListener(window, 'load', allEventsMap(locations, 'home'));
-      } 
-    }
-  });
-
-  // SignUp Form
-  $('form.signup_form').on('submit', function(event) {
-    event.preventDefault();
-    var $form = $(this);
-  //var $target = $($form.attr('data-target'));
-  $.ajax({
-    type: $form.attr('method'),
-    url: 'signup.php',
-    data: $form.serialize(),
-    beforeSend: function(){
-       $('form.signup_form .btn').html('<span class="icon-spin4 animate-spin"></span>');
-       $('body input, body button').prop("disabled", true);
-    },
-    success: function(data, status) {
-      if(data.substring(0, 1) !== "1"){
-      $('#signupError').html(data).removeClass('hidden');
-      $('form.signup_form .btn').html('Create your profile');
-       $('body input, body button').prop("disabled", false);
-    }else{
-      $('body input, body button').prop("disabled", false)
-      $('form.signup_form').unbind('submit').submit();
-    }
-  }
-});
-});
-
-  // PWStrength
-  var pwOptions = {};
-
-  pwOptions.common = {
-    minChar: 6,
-    usernameField: "#signup_email",
-
-  };
-
-  pwOptions.ui = {
-    bootstrap2: false,
-    showErrors: true,
-    showProgressBar: true,
-    showStatus: true,
-    showVerdictsInsideProgressBar: true,
-    container: "#pwstrength",
-    viewports: {
-      progress: ".pwstrength_viewport_progress",
-      verdict: undefined,
-      errors: ".pwstrength_error"
-    }
-  };
-  if($('#signup_pass').is(':visible')){
-    $('#signup_pass').pwstrength(pwOptions);
-  }
-  // NAVBAR SCROLLSPY
-  $('body').scrollspy({ target: '.mainNav' })
-  
+  // DONE
 }
 // END OF HOME PAGE
 
 // INSPIRATION PAGE
 if(currentPage === 'inspiration'){
-
+  // DONE
 }
 // END OF INSPIRATION PAGE
 
@@ -335,7 +224,7 @@ $('.eventsDrop').addClass('active');
       }else{
         var locations = $.parseJSON(data);
         google.maps.event.addDomListener(window, 'load', allEventsMap(locations));
-      } 
+      }
     }
   });
 
@@ -356,7 +245,7 @@ $('.eventsDrop').addClass('active');
 // })
 // .done(function(data) {
 
-//   styleList = '{ 
+//   styleList = '{
 //      ';
 //   $.each(data, function(index, val) {
 //      styleList += '"' + data[index].genre + '" : ' + 'function(e,n,f,i,$r){ return e.indexOf(f) >= 0; },
@@ -438,14 +327,14 @@ $('.eventsDrop').addClass('active');
             if(userType !== '' && !isNaN(userType) ){
               // Open Modal (simulate click)
               setTimeout(function() {$('.eventInfo[data-id="'+userType+'"]').click();}, 1000);
-              
+
             }
             $('table').bind('filterInit', function(){
               $('button.reset')
                       .detach()
                       .appendTo('.tablesorter-filter-row td:first');
             });
-            
+
           },
           headerTemplate : '{content} {icon}'
         }).tablesorterPager({
@@ -511,14 +400,14 @@ $('.eventRow').hover(function(event) {
               }else{
                 $('#eventTitle').html('<small>&nbsp;</small>');
               }
-              
+
               if(data[0].imgfile){
                 $('.eventImg').prop('src', '/profileimg/' + data[0].imgfile);
               }else{
                 $('.eventImg').prop('src', '/img/md-icon-listings.png');
               }
               $('.directions').prop('href', 'http://maps.google.com/maps?daddr=' + encodeURIComponent(data[0].address).replace(/%20/g, "+"))
-              
+
               $('.eventLocat').html('<strong>' + data[0].venue_name + '</strong><br>' + '<small>' + data[0].address + '</small>');
 
               //Social links
@@ -576,7 +465,7 @@ var request;
       //}, 1000)
       $("#loadOverlay").fadeOut('fast');
     });
-  
+
   // Check if event is in DB
   $('.profinfo').on('click', '.enableEvent', function(event) {
     event.preventDefault();
@@ -599,7 +488,7 @@ var request;
       }
     })
   });
-  
+
   // Tooltips
   $('.protip').tooltip();
 
@@ -628,13 +517,13 @@ var request;
           data: {
             userid: userId,
             usertype: userType,
-            act: 'publishOnly', 
+            act: 'publishOnly',
             state: '0'
           },
         })
         .done(function(data) {
           //console.log(data);
-        });       
+        });
         $('.switchBack').removeClass('alert-success').addClass('alert-warning');
         $('.pubText').html('<small>This will display your event live on the website.<br><strong>Only turn this on when your event is confirmed to be happening!</strong></small>');
         $('.pubTitle').html('Publish Your Event');
@@ -647,7 +536,7 @@ var request;
           data: {
             userid: userId,
             usertype: userType,
-            act: 'publishOnly', 
+            act: 'publishOnly',
             state: '1'
           },
         })
@@ -667,7 +556,7 @@ var request;
       event.preventDefault();
       //return false;
     } else {
-      
+
     }
   });
 
@@ -719,7 +608,7 @@ var request;
         $inputs.prop("disabled", false);
         $('.pwChangeSubmit').html('Save changes');
     });
-    
+
   });
 
   $('.pwModal').on('hidden.bs.modal', function () {
@@ -794,7 +683,7 @@ var request;
     .always(function() {
       //console.log("complete");
     });
-    
+
   })
 
   // Input change & submit
@@ -938,7 +827,7 @@ $('.profile_form').on('click', '#removeImg', function(event) {
       event.preventDefault();
       //return false;
     } else {
-      
+
     }
   });
 
@@ -1028,7 +917,7 @@ if(document.getElementById("addressInput").value !== ''){
         center: marker.position
       });
       map.fitBounds(circle.getBounds());
-      
+
 $('input#distance').change(function(event) {
     if(typeof marker !== "undefined"){
       if(typeof circle !== "undefined"){
@@ -1206,7 +1095,7 @@ function populateMusicStyles(userId, userType) {
                    return v == o.value;
               }).length;
         });
-        
+
         $.each(checked, function(i, v) {
             html+= '<li class="styleItem text-warning">'+$.fn.editableutils.escape(v.text)+'</li>';
             // if (i != checked.length - 1) { // For unstyled items
@@ -1217,7 +1106,7 @@ function populateMusicStyles(userId, userType) {
         $el.html(html);
           },
           success: function(response, newValue){
-           
+
           }
         });
     },
@@ -1327,7 +1216,7 @@ function initialize(userType) { // GMaps Init function
       center: marker.position
     });
     map.fitBounds(circle.getBounds());
-    
+
       $('input#distance').change(function(event) {
     if(typeof marker !== "undefined"){
       if(typeof circle !== "undefined"){
@@ -1367,23 +1256,6 @@ function deleteCircle() {
     circle=null;
 }
 
-function logoswap(){
-	if ( $(window).width() < 762) {
-
-		$('img.musiclogo').attr('src', '/img/mdlogo-new-center.png')
-		.css({
-			marginLeft: 'auto',
-			marginRight: 'auto',
-      marginTop: '0'
-		});
-
-	}else{
-
-		$('img.musiclogo').attr('src', '/img/md-headers-home.png')
-    .css('margin-top', '-50px');
-		
-	}
-}
 
 function typeDots() {
     if(dots < 3) {
