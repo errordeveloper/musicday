@@ -31,6 +31,7 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
+      <!--
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
@@ -38,6 +39,102 @@
           <li><a ng-href="#">Contact</a></li>
         </ul>
         <h3 class="text-muted">musicday</h3>
+      </div>
+      -->
+      <div class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/md_logo_top.png"></a>
+              <span class="right"></span>
+              <!-- <?php if($loggedIn){ echo -->
+              <!-- TODO
+                <div class="dropdown signInDrop">
+                  <button class="btn btn-success navbar-btn pull-right dropdown-toggle signInBut" data-toggle="dropdown" data-hover="dropdown" ><small>php-minMail</small><b class="caret"></b></button>
+                  <div class="dropdown-menu pull-right profileMenu">
+                  <ul>
+                  <li><a href="/profile/php-usertype.'"><button class="btn btn-warning btn-sm">Your Profile <span class="icon-cd"></span></button></a></li>
+                  <li><a href="/login.php?act=logout"><button class="btn btn-danger btn-sm">Log Out <span class="icon-logout"></span></button></a></li>
+                  </ul>
+                </div>
+                </div>
+                -->
+                <! -- }else{ echo -->
+                  <div class="dropdown signInDrop">
+                  <button class="btn btn-primary navbar-btn pull-right dropdown-toggle signInBut" data-toggle="dropdown"><span class="icon-lock"></span> Sign in</button>
+
+            <div class="dropdown-menu pull-right loginForm">
+              <h3><span class="icon-lock"></span> Secure login</h3>
+              <div class="error alert alert-danger"></div>
+              <form accept-charset="UTF-8" role="form" action="/login.php?act=check" method="post" id="login">
+                <fieldset>
+                  <div class="form-group">
+                    <input class="form-control" placeholder="E-mail" name="email" type="email" required>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
+                  </div>
+                  <div class="web_field">
+            <label for="first_name">Keep this box empty:</label>
+            <input type="text" class="first_name" name="first_name" autocomplete="off" value="">
+        </div>
+                  <input class="btn btn-success btn-block" type="submit" value="Sign In">
+                </fieldset>
+              </form>
+              <div class="notreg"><small>Not registered? <a href="/#signup">Click here</a></small></div>
+            </div>
+          </div>
+          <!-- } ?> -->
+              <div class="socialCont pull-right">
+                <a href="http://www.facebook.com/musicdayuk" target="_blank">
+                <span class="icon-facebook-rect"></span></a>
+                <a href="http://twitter.com/#!/musicdayuk" target="_blank">
+                <span class="icon-twitter-bird"></span></a>
+              </div>
+          </div>
+
+
+
+          <div class="navbar-collapse collapse mainNav">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/#home">Home</a></li>
+              <li><a href="/#about">About</a></li>
+
+              <li class="dropdown eventsDrop"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#events">Events<b class="caret"></b></a>
+                <ul class="dropdown-menu events-menu">
+                  <li><a href="/events"><span class="icon-book-open"></span> Event Listings</a></li>
+                  <li><a href="/#map_section"><span class="icon-pinboard"></span> Map</a></li>
+                </ul>
+              </li>
+
+              <li class="galleryDrop"><a href="/gallery">Gallery</a></li>
+              <li class="dropdown involvedDrop"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#getInvolved">Get Involved<b class="caret"></b></a>
+                <ul class="dropdown-menu involved-menu">
+                  <!-- <?php if(!$loggedIn){ echo -->
+                  <li><a href="/#signup"><span class="icon-feather"></span>Sign Up</a></li>
+                  <!-- } ?> -->
+              <li><a href="/inspiration"><span class="icon-lightbulb"></span> Inspiration</a></li>
+              <li><a href="/resources"><span class="icon-flash"></span> Resources</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#contact">Contact<b class="caret"></b></a>
+                <ul class="dropdown-menu contact-menu">
+                  <li><a href="mailto:info@musicday.org.uk"><span class="icon-at"></span> Email Us</a></li>
+                  <li><a href="http://musicday.us7.list-manage.com/subscribe?u=e71675a8936e4aeb75b80cc59&id=dd8571dafa" target="_blank"><span class="icon-mail"></span> Join the mailinglist</a></li>
+                  <li class="menuFb"><a href="http://www.facebook.com/musicdayuk"><span class="icon-facebook"></span> Facebook</a></li>
+                  <li class="menuTw"><a href="http://twitter.com/#!/musicdayuk"><span class="icon-twitter"></span> Twitter</a></li>
+                </ul>
+              </li>
+
+            </ul>
+
+          </div><!--/.navbar-collapse -->
+        </div>
       </div>
 
       <div ng-view=""></div>
