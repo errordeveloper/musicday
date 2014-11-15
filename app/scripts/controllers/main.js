@@ -60,17 +60,20 @@ angular.module('musicdayApp')
       type: 'POST',
       data: {act: 'mapAllEvents'},
       success: function(data){
-        if(data === undefined || data === null || data.length === 0){
+    */
+        var data = '[[281,"Music Day at Springfield Park","Springfield Park","The team from Music Day HQ head up 3 stages of music in the beautiful surrounds of Markfield Park, overlooking the River Lea and marshes.",51.5716018677,-0.05789199844],[282,"London Jazz Night","Vortex Jazz Club","",51.5487098694,-0.0764990001917],[286,null,null,"",52.6293907166,1.29594802856],[290,"Music Day - Bristol","Thee Fleece","Coming Soon. . .",51.4520072937,-2.5893099308]]'
+
+        //if(data === undefined || data === null || data.length === 0){
           var mapOptions = {
             center: new google.maps.LatLng(54.0622661,-3.4827427),
             zoom: 6
           };
-          var map = new google.maps.Map(document.getElementById("map-canvas"),
-      mapOptions);
-        }else{
-          var locations = $.parseJSON(data);
-          google.maps.event.addDomListener(window, 'load', allEventsMap(locations, 'home'));
-        }
+          var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        //}else{
+        //  var locations = $.parseJSON(data);
+        //  google.maps.event.addDomListener(window, 'load', allEventsMap(locations, 'home'));
+        //}
+    /*
       }
     });
     */
