@@ -611,6 +611,8 @@ var request;
 
   });
 
+  // This multiline string is completely broken... How did it even work?
+  /*
   $('.pwModal').on('hidden.bs.modal', function () {
       $('.pwModal .modal-body').html('<div class="form-group row">
           <label for="oldPwd" class="col-sm-4">Old password:</label>
@@ -628,7 +630,10 @@ var request;
         </div>
         <div class="alert alert-danger errorBox"></div>');
   })
+  */
 
+  // So is this one!
+  /*
   $('.deleteAcctModal').on('hidden.bs.modal', function () {
       $('.deleteAcctModal .modal-content').html('<div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -645,7 +650,9 @@ var request;
       </div>
     </form>');
   })
+  */
 
+  /*
 // Delete account
   $('.deleteAcctModal').on('click', '.deleteAcctSubmit', function(event){
     event.preventDefault();
@@ -781,6 +788,7 @@ var request;
     }
   });
 });
+*/
 
 // DateTime picker
 $('.form_datetime').datetimepicker({
