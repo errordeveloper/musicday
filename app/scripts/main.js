@@ -1131,7 +1131,7 @@ function allEventsMap(locations, page) {
     center: new google.maps.LatLng(54.0622661,-3.4827427),
     zoom: 5
   };
-  var image = '/img/red-note.png';
+  var image = 'images/red-note.png';
 
   var map = new google.maps.Map(document.getElementById("map-canvas"),
     mapOptions);

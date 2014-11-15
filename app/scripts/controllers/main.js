@@ -1,7 +1,59 @@
 'use strict';
 
 angular.module('musicdayApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ['$scope', 'GoogleMapApi'.ns(), function ($scope, GoogleMapApi) {
+
+    $scope.map = {
+      center: { latitude: 54.0622661, longitude: -3.4827427 },
+      zoom: 6,
+    };
+
+    $scope.markers = [];
+
+    $scope.mainLocations = [
+      [
+        281,
+        "Music Day at Springfield Park",
+        "Springfield Park",
+        "The team from Music Day HQ head up 3 stages of music in the beautiful surrounds of Markfield Park, overlooking the River Lea and marshes.",
+        51.5716018677,
+        -0.05789199844,
+      ],
+      [
+        282,
+        "London Jazz Night",
+        "Vortex Jazz Club",
+        "",
+        51.5487098694,
+        -0.0764990001917,
+      ],
+      [
+        286,
+        null,
+        null,
+        "",
+        52.6293907166,
+        1.29594802856,
+      ],
+      [
+        290,
+        "Music Day - Bristol",
+        "Thee Fleece",
+        "Coming Soon...",
+        51.4520072937,
+        -2.5893099308,
+      ],
+    ];
+
+    GoogleMapApi.then(function(maps) {
+      console.log("Maps are ready!");
+    });
+
+    /*
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    google.maps.event.addDomListener(window, 'load', allEventsMap(locations, 'home'));
+    */
+
     var logoswap = function(){
       if ( $(window).width() < 762) {
         $('img.musiclogo').attr('src', 'images/mdlogo-new-center.png')
@@ -52,49 +104,6 @@ angular.module('musicdayApp')
             if (endIndex == startIndex) startIndex = -1;
         }, aniSpd01);
     });
-
-
-    var locations = [
-      [
-        281,
-        "Music Day at Springfield Park",
-        "Springfield Park",
-        "The team from Music Day HQ head up 3 stages of music in the beautiful surrounds of Markfield Park, overlooking the River Lea and marshes.",
-        51.5716018677,
-        -0.05789199844,
-      ],
-      [
-        282,
-        "London Jazz Night",
-        "Vortex Jazz Club",
-        "",
-        51.5487098694,
-        -0.0764990001917,
-      ],
-      [
-        286,
-        null,
-        null,
-        "",
-        52.6293907166,
-        1.29594802856,
-      ],
-      [
-        290,
-        "Music Day - Bristol",
-        "Thee Fleece",
-        "Coming Soon...",
-        51.4520072937,
-        -2.5893099308,
-      ],
-    ];
-
-    var mapOptions = {
-      center: new google.maps.LatLng(54.0622661,-3.4827427),
-      zoom: 6,
-    };
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    google.maps.event.addDomListener(window, 'load', allEventsMap(locations, 'home'));
 
     // SignUp Form
     $('form.signup_form').on('submit', function(event) {
@@ -152,4 +161,4 @@ angular.module('musicdayApp')
     // NAVBAR SCROLLSPY
     $('body').scrollspy({ target: '.mainNav' })
     */
-  });
+  }]);

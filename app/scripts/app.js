@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name musicdayApp
- * @description
- * # musicdayApp
- *
- * Main module of the application.
- */
 angular
   .module('musicdayApp', [
     'ngAnimate',
@@ -15,7 +7,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'google-maps'.ns()
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,4 +31,11 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+    })
+  .config(['GoogleMapApiProvider'.ns(), function (GoogleMapApi) {
+    GoogleMapApi.configure({
+      //    key: 'your api key',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+    });
+  }]);
