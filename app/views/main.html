@@ -1,8 +1,8 @@
 <div class="container">
   <div id="aniHolder">
-    <div>The events <a href="#map_section">map</a> and <a href="/events">listings</a> are now online</div>
+    <div>The events <a ng-href="##map_section">map</a> and <a ng-href="#/events">listings</a> are now online</div>
     <div>We are uploading new DJ mixes to our <span class="icon-mixcloud"></span>Mixcloud page - <a href="http://www.mixcloud.com/musicdayuk/" target="_blank"> mixcloud.com/musicdayuk/</a></div>
-    <div>We have some great poster designs for you to use on our <a href="/resources">Resources</a> page</div>
+    <div>We have some great poster designs for you to use on our <a ng-href="#/resources">Resources</a> page</div>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
     <h1 style="display:none;">Music Day UK - 21st June 2014</h1>
     <img src="images/md-headers-home.png" class="img-responsive musiclogo" alt="Music Day, UK - 21st June 2014">
     <p>A day of free events to celebrate the universal language of music!</p>
-    <p><a href="#signup" class="btn btn-success btn-lg">Take part &raquo;</a></p>
+    <p><a ng-href="##signup" class="btn btn-success btn-lg">Take part &raquo;</a></p>
   </div>
 </div>
 
@@ -23,18 +23,21 @@
 
   <div class="col-sm-4 homeBox">
     <h2>Music Day 2014!</h2>
-    <p>Last year was a great success and this year will be even better. Check out the <a href="#map_section">Events Map</a> or <a href="/events">Listings</a> to find something happening near you. What better way is there to celebrate the longest day of the year?</p>
-    <p><a class="btn btn-default" href="#/about">Find out more &raquo;</a></p>
+    <p>Last year was a great success and this year will be even better. Check
+    out the <a ng-href="##map_section">Events Map</a> or <a ng-href="#/events">Listings</a> to find something happening near you. What better way is there to celebrate the longest day of the year?</p>
+    <p><a class="btn btn-default" ng-href="#/about">Find out more &raquo;</a></p>
   </div>
   <div class="col-sm-4 homeBox">
     <h2>Be a host</h2>
-    <p>We are looking for organisers, venues or promoters to host their own Music Day event.<br>Check out the <a href="#signup">Get Involved</a> section for inspiration and assistance or <a href="#signup">Sign Up</a> to get started.</p>
-    <p><a class="btn btn-default" href="#/inspiration">Find out how &raquo;</a></p>
+    <p>We are looking for organisers, venues or promoters to host their own
+    Music Day event.<br>Check out the <a ng-href="##signup">Get Involved</a>
+    section for inspiration and assistance or <a ng-href="##signup">Sign Up</a> to get started.</p>
+    <p><a class="btn btn-default" ng-href="#/inspiration">Find out how &raquo;</a></p>
   </div>
   <div class="col-sm-4 homeBox">
     <h2>Be a performer</h2>
     <p>Music Day would be nothing without music! It’s a great opportunity for musicians of all ages, amateur or professional, and there will be plenty of places for you to play – so register your interest and find a gig.</p>
-    <p><a class="btn btn-default" href="#signup">Sign up &raquo;</a></p>
+    <p><a class="btn btn-default" ng-href="##signup">Sign up &raquo;</a></p>
   </div>
 
   <hr>
@@ -57,7 +60,7 @@
 
     <p>Typically this means that the music is brought out <strong>onto the streets</strong>, though venues are also encouraged to get in on the act!</p>
 
-    <p><a href="#/gallery">Go to the Gallery section to see pictures from Fête de la Musique around the world </a></p>
+    <p><a ng-href="#/gallery">Go to the Gallery section to see pictures from Fête de la Musique around the world </a></p>
 
     <img src="images/world-music-day-london-2012-pic-3.jpg" class="img-responsive lft">
 
@@ -73,7 +76,9 @@
 
   <div id="signup" class="container anchorAlign">
     <h2>Are you a performer or want to be an event organiser?</h2>
-    <p>To get involved, sign up below as an artist/band/performer or a venue/host/organiser and we will match you up with local music lovers. If you need some inspiration then head on over to our <a href="/inspiration">Inspiration Page</a>.</p>
+    <p>To get involved, sign up below as an artist/band/performer or a
+    venue/host/organiser and we will match you up with local music lovers. If
+    you need some inspiration then head on over to our <a ng-href="#/inspiration">Inspiration Page</a>.</p>
     <form role="form" class="signup_form" action="/login.php?act=signup" method="post" autocomplete="off">
       <h3>Get Involved — Sign Up</h3>
       <div class="form-group">
@@ -110,7 +115,7 @@
          <div class="checkbox">
            <label>
              <input type="checkbox" name="terms" id="terms">
-               I agree to the <a href="#/terms">Terms &amp; Conditions</a>
+               I agree to the <a ng-href="#/terms">Terms &amp; Conditions</a>
              <small>(We will <i>never</i> share your personal details)</small>
            </label>
          </div>

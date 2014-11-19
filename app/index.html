@@ -55,7 +55,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="images/md_logo_top.png"></a>
+            <a class="navbar-brand" ng-href="#/"><img src="images/md_logo_top.png"></a>
               <span class="right"></span>
               <!-- <?php if($loggedIn){ echo -->
               <!-- TODO
@@ -91,7 +91,7 @@
                   <input class="btn btn-success btn-block" type="submit" value="Sign In">
                 </fieldset>
               </form>
-              <div class="notreg"><small>Not registered? <a href="/#signup">Click here</a></small></div>
+              <div class="notreg"><small>Not registered? <a ng-href="##signup">Click here</a></small></div>
             </div>
           </div>
           <!-- } ?> -->
@@ -110,25 +110,28 @@
               <li class="active"><a ng-href='##home'>Home</a></li>
               <li><a ng-href='##about'>About</a></li>
 
-              <li class="dropdown eventsDrop"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#events">Events<b class="caret"></b></a>
+              <li class="dropdown eventsDrop"><a class="dropdown-toggle"
+                data-toggle="dropdown" data-hover="dropdown" href="##events">Events<b class="caret"></b></a>
                 <ul class="dropdown-menu events-menu">
-                  <li><a href="/events"><span class="icon-book-open"></span> Event Listings</a></li>
-                  <li><a href="/#map_section"><span class="icon-pinboard"></span> Map</a></li>
+                  <li><a ng-href="#/events"><span class="icon-book-open"></span> Event Listings</a></li>
+                  <li><a ng-href="##map_section"><span class="icon-pinboard"></span> Map</a></li>
                 </ul>
               </li>
 
-              <li class="galleryDrop"><a href="/gallery">Gallery</a></li>
-              <li class="dropdown involvedDrop"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#getInvolved">Get Involved<b class="caret"></b></a>
+              <li class="galleryDrop"><a ng-href="#/gallery">Gallery</a></li>
+              <li class="dropdown involvedDrop"><a class="dropdown-toggle"
+                data-toggle="dropdown" data-hover="dropdown" ng-href="##getInvolved">Get Involved<b class="caret"></b></a>
                 <ul class="dropdown-menu involved-menu">
                   <!-- <?php if(!$loggedIn){ echo -->
-                  <li><a href="/#signup"><span class="icon-feather"></span>Sign Up</a></li>
+                  <li><a ng-href="##signup"><span class="icon-feather"></span>Sign Up</a></li>
                   <!-- } ?> -->
-              <li><a href="/inspiration"><span class="icon-lightbulb"></span> Inspiration</a></li>
-              <li><a href="/resources"><span class="icon-flash"></span> Resources</a></li>
+              <li><a ng-href="#/inspiration"><span class="icon-lightbulb"></span> Inspiration</a></li>
+              <li><a ng-href="#/resources"><span class="icon-flash"></span> Resources</a></li>
                 </ul>
               </li>
 
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#contact">Contact<b class="caret"></b></a>
+              <li class="dropdown"><a class="dropdown-toggle"
+                data-toggle="dropdown" data-hover="dropdown" href="##contact">Contact<b class="caret"></b></a>
                 <ul class="dropdown-menu contact-menu">
                   <li><a href="mailto:info@musicday.org.uk"><span class="icon-at"></span> Email Us</a></li>
                   <li><a href="http://musicday.us7.list-manage.com/subscribe?u=e71675a8936e4aeb75b80cc59&id=dd8571dafa" target="_blank"><span class="icon-mail"></span> Join the mailinglist</a></li>
@@ -154,18 +157,18 @@
           </div>
           <div class="col-sm-3">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#map_section">Events Map</a></li>
-              <li><a href="/events">Events Listings</a></li>
+              <li><a ng-href="#/">Home</a></li>
+              <li><a ng-href="##about">About</a></li>
+              <li><a ng-href="##map_section">Events Map</a></li>
+              <li><a ng-href="#/events">Events Listings</a></li>
             </ul>
           </div>
           <div class="col-sm-3">
             <ul>
-              <li><a href="/#signup">Sign Up</a></li>
-              <li><a href="/press">Press</a></li>
-              <li><a href="/resources">Resources</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a ng-href="##signup">Sign Up</a></li>
+              <li><a ng-href="#/press">Press</a></li>
+              <li><a ng-href="#/resources">Resources</a></li>
+              <li><a ng-href="#/privacy">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="col-sm-3">
