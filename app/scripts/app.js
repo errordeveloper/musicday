@@ -24,6 +24,10 @@ angular
         templateUrl: 'views/terms.html',
         controller: 'AboutCtrl'
       })
+      .when('/resources', {
+        templateUrl: 'views/resources.html',
+        controller: 'AboutCtrl'
+      })
       .when('/inspiration', {
         templateUrl: 'views/inspiration.html',
         controller: 'InspirationCtrl'
